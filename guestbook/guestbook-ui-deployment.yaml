@@ -21,6 +21,6 @@ spec:
   syncPolicy:
     automated:
       prune: true # Eliminar recursos antiguos automáticamente
-      selfHeal: true
+      selfHeal: true #otra cosita
     syncOptions:
     - CreateNamespace=true
