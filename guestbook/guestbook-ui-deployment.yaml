@@ -14,10 +14,7 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: byvoxel/php_test:latest # Imagen de Docker utilizada para el despliegue
+      - image: byvoxel/php_test:latest
         name: guestbook-ui
         ports:
         - containerPort: 80
-  strategy:
-    type: Recreate
-# Eliminar la sección de hooks
