@@ -4,7 +4,7 @@ metadata:
   name: guestbook-ui
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app: guestbook-ui
@@ -17,4 +17,4 @@ spec:
       - image: byvoxel/php_test:latest
         name: guestbook-ui #holi
         ports:
-        - containerPort: 80 #holi 3# 
+        - containerPort: 80 #holi 3#
