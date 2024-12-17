@@ -16,9 +16,9 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - image: byvoxel/php_test:latest
-        name: guestbook-ui #holi
+        name: guestbook-ui
         ports:
-        - containerPort: 80 #holi 3#
+        - containerPort: 80
 ---
 apiVersion: batch/v1
 kind: Job
