@@ -7,7 +7,6 @@ spec:
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: guestbook
     repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
     targetRevision: HEAD
   project: default
@@ -17,8 +16,10 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
-  # Incluir el nuevo Job en la lista de recursos
   sources:
     - path: guestbook/guestbook-ui-deployment.yaml
+      repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
     - path: guestbook/guestbook-ui-svc.yaml
+      repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
     - path: guestbook/guestbook-ui-cleanup-job.yaml
+      repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
