@@ -18,3 +18,9 @@ spec:
         name: guestbook-ui
         ports:
         - containerPort: 80
+  syncPolicy:
+    automated:
+      prune: true # Eliminar recursos antiguos automáticamente
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
