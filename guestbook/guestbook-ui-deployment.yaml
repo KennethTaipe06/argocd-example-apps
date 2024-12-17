@@ -12,7 +12,10 @@ spec:
     metadata:
       labels:
         app: guestbook-ui
+        argocd.argoproj.io/hook: PostSync
+        argocd.argoproj.io/hook-delete-policy: HookSucceeded
     spec:
+      terminationGracePeriodSeconds: 0
       containers:
       - image: byvoxel/php_test:latest
         name: guestbook-ui #holi
