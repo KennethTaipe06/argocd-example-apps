@@ -20,6 +20,4 @@ spec:
         - containerPort: 80
   strategy:
     type: Recreate
-  hooks:
-    - type: PostSync
-      command: ["kubectl", "delete", "replicaset", "guestbook-ui-7d96d8dbb8"]
+# Eliminar la sección de hooks

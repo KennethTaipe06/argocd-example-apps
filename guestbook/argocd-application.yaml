@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-ui
+spec:
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: guestbook
+    repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  # Incluir el nuevo Job en la lista de recursos
+  sources:
+    - path: guestbook/guestbook-ui-deployment.yaml
+    - path: guestbook/guestbook-ui-svc.yaml
+    - path: guestbook/guestbook-ui-cleanup-job.yaml
