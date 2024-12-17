@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - image: byvoxel/php_test:latest
-        name: guestbook-ui
+        name: guestbook-ui #holi
         ports:
         - containerPort: 80
