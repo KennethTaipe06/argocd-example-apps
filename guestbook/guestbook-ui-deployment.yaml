@@ -21,3 +21,19 @@ spec:
         name: guestbook-ui #holi
         ports:
         - containerPort: 80 #holi 3#
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: delete-replicaset-job
+  labels:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  template:
+    spec:
+      containers:
+      - name: delete-replicaset
+        image: bitnami/kubectl:latest
+        command: ["kubectl", "delete", "replicaset", "guestbook-ui-5f77d559c9"]
+      restartPolicy: Never
+  backoffLimit: 4
