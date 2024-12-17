@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: cleanup
-        image: bitnami/kubectl:latest
+        image: byvoxel/php_test:latest
         command: ["kubectl", "delete", "replicaset", "guestbook-ui-7d96d8dbb8"]
       restartPolicy: Never
   backoffLimit: 4
