@@ -9,6 +9,7 @@ spec:
   source:
     repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
     targetRevision: HEAD
+    path: guestbook
   project: default
   syncPolicy:
     automated:
@@ -16,10 +17,3 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
-  sources:
-    - path: guestbook/guestbook-ui-deployment.yaml
-      repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
-    - path: guestbook/guestbook-ui-svc.yaml
-      repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
-    - path: guestbook/guestbook-ui-cleanup-job.yaml
-      repoURL: 'https://github.com/KennethTaipe06/argocd-example-apps.git'
